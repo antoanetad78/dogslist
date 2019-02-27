@@ -20,10 +20,18 @@ export default class DogsList extends Component {
     }
 
     render() {
+        let breeds
+        if (this.state.dogBreeds) {
+            breeds = this.state.dogBreeds.map(breed => <li key={breed}>{breed}</li>)
+        }
         return(
             <div className='dogs-list'>
                 <h1>Dogs List</h1>
                 { this.state.dogBreeds === null && 'Loading...'}
+
+                {<ul>
+                    {breeds}
+                </ul>}
             </div>
         )
     }
