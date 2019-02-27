@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 
 export default class DogsList extends Component {
@@ -7,7 +8,7 @@ export default class DogsList extends Component {
 //also, the parent container is where we add our <DogList /> tag, to instantiate this component. So here we only declare the class, we use it in our paren object. Here this.props refers to what we recive from our parent.
     renderDogBreed(breed) {
         // console.log('base renderDogBreeds breed test:', breed)
-        return <li key={breed}>{breed}</li>
+        return <li key={breed}><Link to ={`/dog-breeds/${breed}`}>{breed}</Link></li>
     }
 
     render() {
